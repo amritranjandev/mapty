@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <meta name="description"
+    content="Mapty - A user-friendly workout mapping and tracking application. Log your running or cycling workouts, view details on a map, and analyze your fitness journey. Perfect for fitness enthusiasts!" />
+  <meta name="keywords"
+    content="Mapty, workout tracker, fitness app, map workouts, running, cycling, fitness tracking, workout logging, Map your workouts" />
+  <meta name="author" content="Amrit Ranjan - LinkedIn: https://www.linkedin.com/in/amrit-ranjan-professional/" />
+  <meta property="article:author" content="https://www.linkedin.com/in/amrit-ranjan-professional/" />
+
+  <meta property="og:title" content="Mapty - Map Your Workouts" />
+  <meta property="og:description"
+    content="Track and visualize your running or cycling workouts with Mapty. A modern app designed to simplify fitness tracking." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/" /> <!-- Replace with your app URL -->
+  <meta property="og:image" content="https://example.com/og-image.png" /> <!-- Replace with your app's image URL -->
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mapty - Map Your Workouts" />
+  <meta name="twitter:description" content="Track and map your running and cycling workouts with ease using Mapty." />
+  <meta name="twitter:image" content="https://example.com/twitter-image.png" />
+  <!-- Replace with your app's image URL -->
+
+  <link rel="shortcut icon" type="image/png" href="/icon.png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  defer
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- <script defer src="other.js"></script> -->
+
+  <script defer src="script.js"></script>
+  <title>mapty // Map your workouts</title>
+</head>
+
+<body>
+  <div class="sidebar">
+    <img src="logo.png" alt="Logo" class="logo" />
+
+    <ul class="workouts">
+      <form class="form hidden">
+        <div class="form__row">
+          <label class="form__label">Type</label>
+          <select class="form__input form__input--type">
+            <option value="running">Running</option>
+            <option value="cycling">Cycling</option>
+          </select>
+        </div>
+        <div class="form__row">
+          <label class="form__label">Distance</label>
+          <input class="form__input form__input--distance" placeholder="km" />
+        </div>
+        <div class="form__row">
+          <label class="form__label">Duration</label>
+          <input class="form__input form__input--duration" placeholder="min" />
+        </div>
+        <div class="form__row">
+          <label class="form__label">Cadence</label>
+          <input class="form__input form__input--cadence" placeholder="step/min" />
+        </div>
+        <div class="form__row form__row--hidden">
+          <label class="form__label">Elev Gain</label>
+          <input class="form__input form__input--elevation" placeholder="meters" />
+        </div>
+        <button class="form__btn">OK</button>
+      </form>
+
+      <!-- <li class="workout workout--running" data-id="1234567890">
+          <h2 class="workout__title">Running on April 14</h2>
+          <div class="workout__details">
+            <span class="workout__icon">🏃‍♂️</span>
+            <span class="workout__value">5.2</span>
+            <span class="workout__unit">km</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⏱</span>
+            <span class="workout__value">24</span>
+            <span class="workout__unit">min</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⚡️</span>
+            <span class="workout__value">4.6</span>
+            <span class="workout__unit">min/km</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">🦶🏼</span>
+            <span class="workout__value">178</span>
+            <span class="workout__unit">spm</span>
+          </div>
+        </li>
+
+        <li class="workout workout--cycling" data-id="1234567891">
+          <h2 class="workout__title">Cycling on April 5</h2>
+          <div class="workout__details">
+            <span class="workout__icon">🚴‍♀️</span>
+            <span class="workout__value">27</span>
+            <span class="workout__unit">km</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⏱</span>
+            <span class="workout__value">95</span>
+            <span class="workout__unit">min</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⚡️</span>
+            <span class="workout__value">16</span>
+            <span class="workout__unit">km/h</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⛰</span>
+            <span class="workout__value">223</span>
+            <span class="workout__unit">m</span>
+          </div>
+        </li> -->
+    </ul>
+
+    <p class="copyright">
+      &copy; Copyright by
+      <a class="twitter-link" target="_blank" href="https://www.linkedin.com/in/amrit-ranjan-professional/">Amrit
+        Ranjan</a>. Using for
+      learning/portfolio.
+    </p>
+
+    <p class="social-links">
+      <a href="https://www.linkedin.com/in/amrit-ranjan-professional/" target="_blank" class="social-icon">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://medium.com/@amritranjanamc" target="_blank" class="social-icon">
+        <i class="fab fa-medium"></i>
+      </a>
+      <a href="https://github.com/amritranjandev" target="_blank" class="social-icon">
+        <i class="fab fa-github"></i>
+      </a>
+    </p>
+
+
+  </div>
+
+  <div id="map"></div>
+</body>
+
+</html>

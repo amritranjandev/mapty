@@ -1,7 +1,7 @@
 
 # Workout Tracker App
 
-A web-based application to log running and cycling workouts on a map. The app leverages geolocation to detect the user's location and integrates with Leaflet.js to display the map and markers.
+A web-based application [mapty](https://amritranjandev.github.io/mapty/) to log running and cycling workouts on a map. The app leverages geolocation to detect the user's location and integrates with Leaflet.js to display the map and markers.
 
 ## Features
 

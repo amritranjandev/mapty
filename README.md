@@ -28,7 +28,7 @@ A web-based application to log running and cycling workouts on a map. The app le
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/workout-tracker.git
+   git clone https://github.com/amritranjandev/mapty.git
    cd workout-tracker
    ```
 2. **Project Structure**
